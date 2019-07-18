@@ -4,8 +4,8 @@
         <title>Team Introduction</title>
         <script type="text/javascript">
             function introduction() {
-                var name = document.forms['IntroForm']['Name'];
-                var fact = document.forms['IntroForm']['Fact'];
+                var name = document.forms['IntroForm']['name'];
+                var fact = document.forms['IntroForm']['fact'];
 
                 if (name.value == ""){
                     window.alert('Please enter your name.');
@@ -25,12 +25,12 @@
 <body>
     <h1 style = 'text-align: center'>Team Introduction</h1>
     <form name='IntroForm' onsubmit="return introduction()">
-        <p>Name: <input type="text" size=60 name="Name" /></p>
-        <p>Interesting Fact: <input type="text" size=60 name="Fact" /></p><br>
+        <p>Name: <input type="text" size=60 name="name" /></p>
+        <p>Interesting Fact: <input type="text" size=60 name="fact" /></p><br>
         <p><input type="submit" value="Submit Form" />
             <script>
-                addEventListener("click", function() {
-                    console.log("Name: " + Name + " Interesting Fact: " + Fact)
+                addEventListener("onSubmit", function() {
+                    console.log("Name: " + name + " Interesting Fact: " + fact)
                 })
             </script>
             <input type="reset" />
