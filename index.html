@@ -2,14 +2,40 @@
 <html>
     <head>
         <title>Team Introduction</title>
+        <script type="text/javascript">
+            function introduction() {
+                var name = document.forms['IntroForm']['Name'];
+                var fact = document.forms['IntroForm']['Fact'];
+
+                if (name.value == ""){
+                    window.alert('Please enter your name.');
+                    name.focus();
+                    return false;
+                }
+                if (fact.value == ""){
+                    window.alert('Please enter your fact.');
+                    fact.focus();
+                    return false;
+                }
+                return true;
+                
+            }
+        </script>
     </head>  
 <body>
-
-<form action="./welcome.php" method="post">
-Name: <input type="text" name="name"><br>
-An Interesting Fact: <input type="text" name="fact"><br>
-<button type = 'submit'>Submit</button>
-</form>
-
+    <h1 style = 'text-align: center'>Team Introduction</h1>
+    <form name='IntroForm' onsubmit="return introduction()">
+        <p>Name: <input type="text" size=60 name="Name" /></p>
+        <p>Interesting Fact: <input type="text" size=60 name="Fact" /></p><br>
+        <p><input type="submit" value="Submit Form" />
+            <script>
+                addEventListener("click", function() {
+                    console.log("Name: " + Name + " Interesting Fact: " + Fact)
+                })
+            </script>
+            <input type="reset" />
+        </p>
+        <textarea name="output">When you hit submit your input will go here</textarea>
+    </form>
 </body>
 </html>
